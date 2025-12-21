@@ -1,8 +1,13 @@
+html {
+  overscroll-behavior: none;
+}
+
 body{
   font-family: "Noto Serif JP", serif;
   margin: 0;
   padding: 0;
   overflow-y: auto;
+  overflow-x: hidden;
 }
 
 section {
@@ -12,9 +17,15 @@ section {
 .wrapper {
   position: relative;
   width: 100vw;
-  height: 100vh;
+  min-height: 100vh;
   overflow: hidden;
   background: linear-gradient(180deg, #06402bda 40%, #1a4525d5 80%, #074e07d0 100%);
+}
+
+.titlepage {
+  position: relative;
+  min-height: 100vh;
+  overflow: hidden;
 }
 
 .titlepage h2{
@@ -77,18 +88,6 @@ a:visited {
   text-decoration: none;
 }
 
-.sidetitle {
-font-weight: bold;
-font-size: 40px;
-}
-
-.slide ul {
-  padding-top: 50px;
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
 .slide li {
   margin-bottom: 10px;;
 }
@@ -99,8 +98,6 @@ font-size: 40px;
   font-size: 20px !important;
   color: #c9c4b8;
 }
-
-
 
 .galleryheader {
   text-align: center;
