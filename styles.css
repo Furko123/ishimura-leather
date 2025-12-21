@@ -5,16 +5,20 @@ body{
   overflow-y: auto;
 }
 
+section {
+  min-height: 100vh;
+}
+
 .wrapper {
-  position: absolute;
+  position: relative;
   margin-right: 300px;
-  width: calc(100% - 300px);
-  height: 100%;
+  width: 100vw;
+  height: 100vh;
   overflow: hidden;
   background: linear-gradient(180deg, #06402bda 40%, #1a4525d5 80%, #074e07d0 100%);
 }
 
-h2{
+.titlepage h2{
   font-family: "Noto Serif JP", serif;
   position:absolute;
   top: 50%;
@@ -27,17 +31,33 @@ h2{
   text-transform: uppercase;
 }
 
-.slide {
-  text-align: center;
+h2 {
+  position: static; /* reset */
+  font-family: "Noto Serif JP", serif;
+  font-size: 50px;
+  font-weight: bold;
+  color: #c9c4b8;
   margin: 0;
+  text-transform: uppercase;
+  line-height: 1.2; /* prevents vertical overlap */
+}
+
+
+.slide {
+  position: fixed;
+  position: fixed;
+  top: 0;
+  right: 0;
+
+  width: 300px;
+  height: 100vh;
+
   padding-top: 50px;
   box-sizing: border-box;
-  height: 100%;
-  width: 300px;
-  position: absolute;
-  right:0;
-  transition: 0.5s, ease;
+
+  text-align: center;
   background: #cac7c11e;
+
   font-size: 30px;
   text-transform: uppercase;
   color: #c9c4b8;
@@ -80,4 +100,40 @@ font-size: 40px;
   padding-top: 5px;
   font-size: 20px !important;
   color: #c9c4b8;
+}
+
+
+
+.galleryheader {
+  text-align: center;
+  text-transform: uppercase;
+  padding: 32px;
+  background-color: #06402bda;
+  color: #c9c4b8;
+  border-bottom: 4px solid #074e07d0;
+}
+
+.gallery {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 20px 10px;
+}
+
+.gallery img {
+  width: 100%;
+  max-width: 350px;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.gallery::after {
+  content: "";
+  width: 350px;
 }
