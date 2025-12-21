@@ -11,7 +11,6 @@ section {
 
 .wrapper {
   position: relative;
-  margin-right: 300px;
   width: 100vw;
   height: 100vh;
   overflow: hidden;
@@ -44,7 +43,6 @@ h2 {
 
 
 .slide {
-  position: fixed;
   position: fixed;
   top: 0;
   right: 0;
