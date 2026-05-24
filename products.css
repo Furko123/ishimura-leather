@@ -1,45 +1,47 @@
+/* Page-specific styles for products.html — loaded after styles.css */
 
-* {
-    box-sizing: border-box;
-  }
+.note-block {
+  border-left: 1px solid var(--tan);
+  padding-left: var(--space-3);
+  margin-top: var(--space-4);
+  max-width: 70ch;
+}
 
-  body {
-    margin: 0;
-    font-family: sans-serif;
-    background: #f5f6f7;
+.note-block p {
+  font-size: 0.95rem;
+  color: var(--cream);
+  margin: 0 0 var(--space-2);
+}
+
+.product-card__image {
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.4s var(--ease);
+}
+
+.product-card__image::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse at 30% 30%, rgba(232, 226, 208, 0.1), transparent 60%),
+    radial-gradient(ellipse at 70% 80%, rgba(0, 0, 0, 0.4), transparent 65%);
+  pointer-events: none;
+  transition: opacity 0.4s var(--ease);
+}
+
+.product-card:hover .product-card__image::after {
+  opacity: 0.6;
+}
+
+/* Stagger product card reveals on page load */
+.product-card:nth-child(1) { animation: fadeInUp 0.6s var(--ease) 0.1s forwards; opacity: 0; }
+.product-card:nth-child(2) { animation: fadeInUp 0.6s var(--ease) 0.2s forwards; opacity: 0; }
+.product-card:nth-child(3) { animation: fadeInUp 0.6s var(--ease) 0.3s forwards; opacity: 0; }
+.product-card:nth-child(4) { animation: fadeInUp 0.6s var(--ease) 0.4s forwards; opacity: 0; }
+
+@media (max-width: 768px) {
+  .note-block {
+    padding-left: var(--space-2);
   }
-  
-  .header {
-    text-align: center;
-    text-transform: uppercase;
-    padding: 32px;
-    background-color: #0a0a23;
-    color: #fff;
-    border-bottom: 4px solid #fdb347;
-  }
-  
-  .gallery {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    gap: 16px;
-    max-width: 1400px;
-    margin: 0 auto;
-    padding: 20px 10px;
-  }
-  
-  .gallery img {
-    width: 100%;
-    max-width: 350px;
-    height: 300px;
-    object-fit: cover;
-    border-radius: 10px;
-  }
-  
-  .gallery::after {
-    content: "";
-    width: 350px;
-  }
-  
+}

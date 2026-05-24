@@ -1,41 +1,128 @@
 <!DOCTYPE html>
 <html lang="en">
-
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Ishimura Leather — hand-stitched leather goods from a small atelier in Kyoto and Berlin." />
     <title>Ishimura Leather</title>
-    <link href="styles.css" rel="stylesheet"/>
+    <link href="styles.css" rel="stylesheet" />
   </head>
 
   <body>
+    <header class="site-header">
+      <div class="header-content">
+        <div class="brand">
+          Ishimura
+          <span class="brand-kanji">石村</span>
+        </div>
 
-    <label>
-      <div class="slide">
-        <div>
-          <ul>
-            <li><a href="#">dashboard</a></li>
-            <li><a href="./about.html">about</li>
-            <li><a href="./products.html">products</li>
-            <li><a href="./contact.html">contact</li>
-            <li><a href="./impressum.html">impressum</li>
+        <nav role="navigation" aria-label="Main">
+          <ul class="nav">
+            <li><a href="./index.html" class="is-active">Home</a></li>
+            <li><a href="./about.html">About</a></li>
+            <li><a href="./products.html">Products</a></li>
+            <li><a href="./contact.html">Contact</a></li>
+            <li><a href="./impressum.html">Impressum</a></li>
           </ul>
+        </nav>
+
+        <div class="header-right">
+          <div class="lang-selector">
+            <a href="#">JP</a><span class="sep">|</span><a href="#">EN</a>
+          </div>
         </div>
       </div>
-    </label>
+    </header>
 
-    <main>
+    <main class="site-main">
+      <section class="hero">
+        <div>
+          <span class="eyebrow">Atelier Ishimura · est. 2014</span>
+          <h1>
+            Leather, slowly.<br />Stitched by hand.
+            <span class="heading-jp">ゆっくりと、手縫いで</span>
+          </h1>
+          <p class="lede">
+            A small workshop devoted to the patient craft of full-grain leather — wallets, bags, and journals
+            shaped one stitch at a time, made to soften and deepen with the years.
+          </p>
+        </div>
+      </section>
 
-    <div class="wrapper">
+      <section class="section">
+        <span class="eyebrow">Philosophy</span>
+        <h2>
+          Three things we return to, again.
+          <span class="heading-jp">考え方</span>
+        </h2>
 
-      <div class="langselector">
-        <a href="#"> JP </a> | <a href="#">EN</a>
-      </div>
+        <div class="feature-grid">
+          <article class="feature">
+            <h3>Vegetable-tanned</h3>
+            <p>Hides tanned with bark and oak — slower, kinder, and built for a long second life.</p>
+          </article>
+          <article class="feature">
+            <h3>Saddle-stitched</h3>
+            <p>Every seam sewn by hand with waxed linen. If one stitch fails, the rest hold.</p>
+          </article>
+          <article class="feature">
+            <h3>Unmarked</h3>
+            <p>No logos pressed into the grain. The maker's mark sits inside, like a signature.</p>
+          </article>
+          <article class="feature">
+            <h3>Repaired, not replaced</h3>
+            <p>Every piece returns to the bench for the cost of materials. Built to outlast.</p>
+          </article>
+        </div>
+      </section>
 
-      <h2>Testing</h2>
+      <section class="section">
+        <span class="eyebrow">Featured</span>
+        <h2>
+          Pieces from the current collection.
+          <span class="heading-jp">今期の作品</span>
+        </h2>
 
-    </div>
+        <div class="product-grid">
+          <article class="product-card">
+            <div class="product-card__image --cognac"></div>
+            <h3 class="product-card__name">The Bifold</h3>
+            <span class="product-card__meta">Classic wallet</span>
+            <p class="product-card__desc">Hand-skived edges, six card slots, a patina that arrives within weeks.</p>
+          </article>
+
+          <article class="product-card">
+            <div class="product-card__image --natural"></div>
+            <h3 class="product-card__name">The Day Tote</h3>
+            <span class="product-card__meta">Shoulder bag</span>
+            <p class="product-card__desc">One main compartment, one interior pocket, built to soften across the shoulder.</p>
+          </article>
+
+          <article class="product-card">
+            <div class="product-card__image --chocolate"></div>
+            <h3 class="product-card__name">The Notebook Cover</h3>
+            <span class="product-card__meta">Book accessory</span>
+            <p class="product-card__desc">Fits A5 hardcover. Refillable, restitchable, meant to outlive what's inside.</p>
+          </article>
+        </div>
+
+        <div class="mt-5 text-center">
+          <a href="./products.html" class="btn-outline">View all products</a>
+        </div>
+      </section>
     </main>
 
+    <footer class="site-footer">
+      <div class="site-footer__mark">石村</div>
+      <div class="site-footer__meta">
+        <span>© Ishimura Leather</span>
+        <span class="dot">·</span>
+        <span>Kyoto</span>
+        <span class="dot">·</span>
+        <span>Berlin</span>
+        <span class="dot">·</span>
+        <span>est. 2014</span>
+      </div>
+    </footer>
   </body>
 </html>
