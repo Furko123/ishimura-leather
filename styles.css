@@ -1,12 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@300;400;600;700&family=Playfair+Display:ital@0;1&display=swap');
 
 :root {
-  /* Color Palette — Forest Leather Atelier */
-  --ink:           #0a0805;
-  --forest-deep:   #06402b;
-  --forest:        #1a4525;
-  --forest-light:  #2d5a3a;
-  --moss:          #6b8a6e;
+  /* Color Palette — Deep Forest Leather Atelier */
+  --ink:           #020c07;
+  --forest-darkest:#020c07;
+  --forest-deeper: #051a10;
+  --forest-deep:   #082616;
+  --forest:        #0c331e;
+  --forest-light:  #103b24;
+  --moss:          #5a7560;
   --cream:         #c9c4b8;
   --parchment:     #e8e2d0;
   --tan:           #8b6f47;
@@ -48,7 +50,7 @@ body {
   font-size: 1rem;
   line-height: 1.65;
   color: var(--cream);
-  background: var(--ink);
+  background: var(--forest-darkest);
   overflow-x: hidden;
 }
 
@@ -77,9 +79,9 @@ body {
   position: sticky;
   top: 0;
   z-index: 100;
-  background: rgba(10, 8, 5, 0.95);
-  border-bottom: 1px solid rgba(201, 196, 184, 0.1);
-  backdrop-filter: blur(8px);
+  background: rgba(5, 26, 16, 0.92);
+  border-bottom: 1px solid rgba(201, 196, 184, 0.08);
+  backdrop-filter: blur(10px);
   padding: 1.2rem var(--space-5);
 }
 
@@ -161,7 +163,7 @@ body {
 
 .site-main {
   flex: 1;
-  background: linear-gradient(180deg, #06402bda 40%, #1a4525d5 80%, #074e07d0 100%);
+  background: linear-gradient(180deg, #031b10 0%, #082616 50%, #020c07 100%);
   position: relative;
 }
 
@@ -195,14 +197,14 @@ body {
 }
 
 .site-footer {
-  border-top: 1px solid rgba(201, 196, 184, 0.1);
+  border-top: 1px solid rgba(201, 196, 184, 0.08);
   padding: var(--space-5) var(--space-5) var(--space-4);
   text-align: center;
   font-size: 0.75rem;
   letter-spacing: 0.3em;
   text-transform: uppercase;
   color: var(--cream);
-  background: var(--ink);
+  background: var(--forest-deeper);
 }
 
 .site-footer__mark {
@@ -540,6 +542,118 @@ p {
   font-size: 0.9rem;
   color: var(--cream);
   margin: var(--space-1) 0 0;
+}
+
+/* ────────────────────── IMAGERY (zen / nature) ────────────────────── */
+
+/* Hero with full-bleed background photograph */
+.hero--imaged {
+  min-height: 92vh;
+  isolation: isolate;
+  overflow: hidden;
+}
+
+.hero--imaged .hero-bg {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background-size: cover;
+  background-position: center;
+  filter: saturate(0.55) brightness(0.55) contrast(1.05);
+  animation: heroDrift 30s ease-in-out infinite alternate;
+}
+
+.hero--imaged::before,
+.hero--imaged::after {
+  display: none;
+}
+
+.hero--imaged > div {
+  position: relative;
+  z-index: 1;
+}
+
+/* Atmospheric vignette over hero photo */
+.hero--imaged .hero-veil {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background:
+    radial-gradient(ellipse at 30% 40%, rgba(3, 27, 16, 0.35) 0%, rgba(2, 12, 7, 0.85) 75%),
+    linear-gradient(180deg, rgba(2, 12, 7, 0.5) 0%, rgba(2, 12, 7, 0.95) 100%);
+  pointer-events: none;
+}
+
+@keyframes heroDrift {
+  from { transform: scale(1.05) translate(0, 0); }
+  to   { transform: scale(1.12) translate(-30px, -20px); }
+}
+
+/* Elegant framed photograph */
+.image-frame {
+  position: relative;
+  overflow: hidden;
+  border: 1px solid rgba(201, 196, 184, 0.12);
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.5);
+  background: var(--forest-deeper);
+}
+
+.image-frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: saturate(0.7) brightness(0.85);
+  transition: filter 0.6s var(--ease), transform 0.8s var(--ease);
+}
+
+.image-frame:hover img {
+  filter: saturate(0.85) brightness(0.95);
+  transform: scale(1.03);
+}
+
+.image-frame--portrait {
+  aspect-ratio: 4 / 5;
+}
+
+.image-frame--landscape {
+  aspect-ratio: 16 / 10;
+}
+
+.image-frame--square {
+  aspect-ratio: 1;
+}
+
+/* Subtle accent imagery — sits between sections */
+.section-accent {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 var(--space-5);
+}
+
+.section-accent .image-frame {
+  max-height: 60vh;
+}
+
+/* Decorative single-line photo strip */
+.image-strip {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-2);
+  margin-top: var(--space-4);
+}
+
+.image-strip .image-frame {
+  aspect-ratio: 3 / 4;
+}
+
+@media (max-width: 768px) {
+  .image-strip {
+    grid-template-columns: 1fr;
+    gap: var(--space-2);
+  }
+  .hero--imaged {
+    min-height: 70vh;
+  }
 }
 
 /* ────────────────────── BUTTONS & LINKS ────────────────────── */
